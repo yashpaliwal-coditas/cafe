@@ -14,10 +14,11 @@ public class CafeExecution extends Thread {
             switch (choice){
                 case 0: flag=false;
                     break;
-                case 1: sychronised(person1){
-                    bookingStatus=persor1.booking();
+                case 1:synchronized (this) {
+                    bookingStatus = persor1.booking();
                 }
                     break;
+
                 case 2: try{
                     if(!bookingStatus){
                         throw new ReservationException();
@@ -27,9 +28,8 @@ public class CafeExecution extends Thread {
                 catch (ReservationException e){
                     System.out.println("please Book table first");
                 }
-
                     break;
-                case 3: if(bookingStatus){
+                case 3:
                     try{
                         if(!bookingStatus) {
                             throw new ReservationException();
@@ -39,7 +39,7 @@ public class CafeExecution extends Thread {
                     catch (ReservationException e){
                         System.out.println("please Book table first");
                     }
-                }
+
                     break;
                 default:
                     System.out.println("You have entered wrong choice");
@@ -51,3 +51,139 @@ public class CafeExecution extends Thread {
        cafeExecution.start();
     }
 }
+//Enter the choice
+//0. Exit
+//1. book a table
+// 2. Display menu
+//3. Order coffee
+//2
+//No reservation found exception
+//please Book table first
+//Enter the choice
+//0. Exit
+//1. book a table
+// 2. Display menu
+//3. Order coffee
+//3
+//No reservation found exception
+//please Book table first
+//Enter the choice
+//0. Exit
+//1. book a table
+// 2. Display menu
+//3. Order coffee
+//1
+//Please enter the number of persons
+//7
+//congration your seat is booked having max occupancy 8
+//Enter the choice
+//0. Exit
+//1. book a table
+// 2. Display menu
+//3. Order coffee
+//2
+//1. coffee :: 120
+//2. sandwich :: 150
+//3. Water :: 60
+//4. Ends
+//Enter the choice
+//0. Exit
+//1. book a table
+// 2. Display menu
+//3. Order coffee
+//3
+//Enter the table number
+//12
+//1. coffee :: 120
+//2. sandwich :: 150
+//3. Water :: 60
+//4. Ends
+//3
+//Enter quantity
+//1
+//1. coffee :: 120
+//2. sandwich :: 150
+//3. Water :: 60
+//4. Ends
+//2
+//Enter quantity
+//1
+//1. coffee :: 120
+//2. sandwich :: 150
+//3. Water :: 60
+//4. Ends
+//1
+//Enter quantity
+//3
+//1. coffee :: 120
+//2. sandwich :: 150
+//3. Water :: 60
+//4. Ends
+//4
+//-------------------------------------------------
+//-----------------------------
+//Your bill is :
+//Bill no is :: 884
+//  Items   unitprice  Qty  total
+//   water      60      1    60
+//  coffee     120      3    360
+//sandwich     150      1    150
+//------------------------------------
+//--------------------------------------
+//your total bill is 570
+//Enter the choice
+//0. Exit
+//1. book a table
+// 2. Display menu
+//3. Order coffee
+//0
+//
+//Process finished with exit code 0
+
+// if we dont add any coffee
+//Enter the choice
+//0. Exit 
+//1. book a table 
+// 2. Display menu 
+//3. Order coffee
+//1
+//Please enter the number of persons
+//7
+//congration your seat is booked having max occupancy 8
+//Enter the choice
+//0. Exit 
+//1. book a table 
+// 2. Display menu 
+//3. Order coffee
+//3
+//Enter the table number
+//21
+//1. coffee :: 120 
+//2. sandwich :: 150 
+//3. Water :: 60 
+//4. Ends
+//3
+//Enter quantity
+//1
+//1. coffee :: 120 
+//2. sandwich :: 150 
+//3. Water :: 60 
+//4. Ends
+//2
+//Enter quantity
+//1
+//1. coffee :: 120 
+//2. sandwich :: 150 
+//3. Water :: 60 
+//4. Ends
+//4
+//InvalidOrderException
+//You must have to add 1 coffee
+//Enter the choice
+//0. Exit 
+//1. book a table 
+// 2. Display menu 
+//3. Order coffee
+//0
+//
+//Process finished with exit code 0
