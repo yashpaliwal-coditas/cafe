@@ -85,6 +85,10 @@ public class CafeManagement implements BookTables, PlaceOrder {
             }
             System.out.println("Enter quantity");
             int quantity = scanner.nextInt();
+            if(order.containsKey(menu[choice-1])){
+                int qt=order.get(menu[choice-1]).intValue();
+                quantity+=qt;
+            }
             bill+=menuPrice.get(menu[choice-1])*quantity;
             order.put(menu[choice-1],quantity);
             billMap.put(menu[choice-1],quantity*menuPrice.get(menu[choice-1]));
