@@ -1,29 +1,29 @@
 package assignment01march.rivision;
-
 import java.util.Scanner;
-
 public class CafeExecution extends Thread {
+    CafeManagement person ;
+    CafeExecution(CafeManagement person){
+        this.person = person;
+    }
     public void run(){
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
-        CafeManagement persor1 = new CafeManagement();
         boolean bookingStatus=false;
         while (flag){
-            System.out.println("Enter the choice\n0. Exit \n1. book a table \n 2. Display menu \n3. Order coffee");
+            System.out.println("Enter the choice\n0. Exit \n1. book a table \n2. Display menu \n3. Order coffee");
             int choice = scanner.nextInt();
             switch (choice){
                 case 0: flag=false;
                     break;
                 case 1:synchronized (this) {
-                    bookingStatus = persor1.booking();
+                    bookingStatus = person.booking();
                 }
                     break;
-
                 case 2: try{
                     if(!bookingStatus){
                         throw new ReservationException();
                     }
-                    persor1.display();
+                    person.display();
                 }
                 catch (ReservationException e){
                     System.out.println("please Book table first");
@@ -34,12 +34,11 @@ public class CafeExecution extends Thread {
                         if(!bookingStatus) {
                             throw new ReservationException();
                         }
-                        persor1.order();
+                        person.order();
                     }
                     catch (ReservationException e){
                         System.out.println("please Book table first");
                     }
-
                     break;
                 default:
                     System.out.println("You have entered wrong choice");
@@ -47,8 +46,11 @@ public class CafeExecution extends Thread {
         }
     }
     public static void main(String[] args) {
-       CafeExecution cafeExecution = new CafeExecution();
+       CafeManagement person = new CafeManagement();
+       CafeExecution cafeExecution = new CafeExecution(person);
+//       CafeExecution cafeExecution1 = new CafeExecution(person);
        cafeExecution.start();
+//       cafeExecution1.start();
     }
 }
 //Enter the choice
