@@ -54,23 +54,7 @@ public class CafeExecution extends Thread {
 //Enter the choice
 //0. Exit
 //1. book a table
-// 2. Display menu
-//3. Order coffee
-//2
-//No reservation found exception
-//please Book table first
-//Enter the choice
-//0. Exit
-//1. book a table
-// 2. Display menu
-//3. Order coffee
-//3
-//No reservation found exception
-//please Book table first
-//Enter the choice
-//0. Exit
-//1. book a table
-// 2. Display menu
+//2. Display menu
 //3. Order coffee
 //1
 //Please enter the number of persons
@@ -79,72 +63,112 @@ public class CafeExecution extends Thread {
 //Enter the choice
 //0. Exit
 //1. book a table
-// 2. Display menu
+//2. Display menu
 //3. Order coffee
 //2
-//1. coffee :: 120
-//2. sandwich :: 150
-//3. Water :: 60
-//4. Ends
+//+---+----------++-----+
+//|Sno|   ITEM   ||Price|
+//+---+----------++-----+
+//| 1.|  coffee  :: 120 |
+//| 2.| sandwich :: 150 |
+//| 3.| Water    ::  60 |
+//| 4.| Ends            |
+//+---+----------++-----+
 //Enter the choice
 //0. Exit
 //1. book a table
-// 2. Display menu
+//2. Display menu
 //3. Order coffee
 //3
 //Enter the table number
 //12
-//1. coffee :: 120
-//2. sandwich :: 150
-//3. Water :: 60
-//4. Ends
+//+---+----------++-----+
+//|Sno|   ITEM   ||Price|
+//+---+----------++-----+
+//| 1.|  coffee  :: 120 |
+//| 2.| sandwich :: 150 |
+//| 3.| Water    ::  60 |
+//| 4.| Ends            |
+//+---+----------++-----+
 //3
 //Enter quantity
 //1
-//1. coffee :: 120
-//2. sandwich :: 150
-//3. Water :: 60
-//4. Ends
+//+---+----------++-----+
+//|Sno|   ITEM   ||Price|
+//+---+----------++-----+
+//| 1.|  coffee  :: 120 |
+//| 2.| sandwich :: 150 |
+//| 3.| Water    ::  60 |
+//| 4.| Ends            |
+//+---+----------++-----+
 //2
 //Enter quantity
 //1
-//1. coffee :: 120
-//2. sandwich :: 150
-//3. Water :: 60
-//4. Ends
+//+---+----------++-----+
+//|Sno|   ITEM   ||Price|
+//+---+----------++-----+
+//| 1.|  coffee  :: 120 |
+//| 2.| sandwich :: 150 |
+//| 3.| Water    ::  60 |
+//| 4.| Ends            |
+//+---+----------++-----+
 //1
 //Enter quantity
 //3
-//1. coffee :: 120
-//2. sandwich :: 150
-//3. Water :: 60
-//4. Ends
+//+---+----------++-----+
+//|Sno|   ITEM   ||Price|
+//+---+----------++-----+
+//| 1.|  coffee  :: 120 |
+//| 2.| sandwich :: 150 |
+//| 3.| Water    ::  60 |
+//| 4.| Ends            |
+//+---+----------++-----+
 //4
 //-------------------------------------------------
 //-----------------------------
 //Your bill is :
-//Bill no is :: 884
-//  Items   unitprice  Qty  total
-//   water      60      1    60
-//  coffee     120      3    360
-//sandwich     150      1    150
+//Bill no is :: 397
+//+--------+-----------+-----+-------+
+//|  Items | unitprice | Qty | total |
+//+--------+-----------+-----+-------+
+//|   water|      60   |  1  |    60 |
+//|sandwich|     150   |  1  |   150 |
+//|  coffee|     120   |  3  |  1080 |
+//+--------+-----------+-----+-------+
 //------------------------------------
-//--------------------------------------
-//your total bill is 570
+//| your total bill is 570           |
+//------------------------------------
 //Enter the choice
 //0. Exit
 //1. book a table
-// 2. Display menu
+//2. Display menu
 //3. Order coffee
 //0
 //
 //Process finished with exit code 0
 
-// if we dont add any coffee
+//With Exceptions:
+
 //Enter the choice
 //0. Exit 
 //1. book a table 
-// 2. Display menu 
+//2. Display menu 
+//3. Order coffee
+//2
+//No reservation found exception
+//please Book table first
+//Enter the choice
+//0. Exit 
+//1. book a table 
+//2. Display menu 
+//3. Order coffee
+//3
+//No reservation found exception
+//please Book table first
+//Enter the choice
+//0. Exit 
+//1. book a table 
+//2. Display menu 
 //3. Order coffee
 //1
 //Please enter the number of persons
@@ -153,36 +177,48 @@ public class CafeExecution extends Thread {
 //Enter the choice
 //0. Exit 
 //1. book a table 
-// 2. Display menu 
+//2. Display menu 
 //3. Order coffee
 //3
 //Enter the table number
-//21
-//1. coffee :: 120 
-//2. sandwich :: 150 
-//3. Water :: 60 
-//4. Ends
+//12
+//+---+----------++-----+
+//|Sno|   ITEM   ||Price|
+//+---+----------++-----+
+//| 1.|  coffee  :: 120 |
+//| 2.| sandwich :: 150 |
+//| 3.| Water    ::  60 |
+//| 4.| Ends            |
+//+---+----------++-----+
 //3
 //Enter quantity
 //1
-//1. coffee :: 120 
-//2. sandwich :: 150 
-//3. Water :: 60 
-//4. Ends
+//+---+----------++-----+
+//|Sno|   ITEM   ||Price|
+//+---+----------++-----+
+//| 1.|  coffee  :: 120 |
+//| 2.| sandwich :: 150 |
+//| 3.| Water    ::  60 |
+//| 4.| Ends            |
+//+---+----------++-----+
 //2
 //Enter quantity
 //1
-//1. coffee :: 120 
-//2. sandwich :: 150 
-//3. Water :: 60 
-//4. Ends
+//+---+----------++-----+
+//|Sno|   ITEM   ||Price|
+//+---+----------++-----+
+//| 1.|  coffee  :: 120 |
+//| 2.| sandwich :: 150 |
+//| 3.| Water    ::  60 |
+//| 4.| Ends            |
+//+---+----------++-----+
 //4
 //InvalidOrderException
 //You must have to add 1 coffee
 //Enter the choice
 //0. Exit 
 //1. book a table 
-// 2. Display menu 
+//2. Display menu 
 //3. Order coffee
 //0
 //
