@@ -10,7 +10,6 @@ interface PlaceOrder{
 }
 public class CafeManagement implements BookTables, PlaceOrder {
     static int tableFor2=8, tableFor4= 4, tableFor6= 2, tableFor8=2;
-    HashMap<String,Integer> order = new HashMap<String,Integer>();
     final String menu[]={"coffee","sandwich","water"};
     HashMap<String,Integer> menuPrice = new HashMap<String,Integer>();
     CafeManagement(){
@@ -63,12 +62,18 @@ public class CafeManagement implements BookTables, PlaceOrder {
 }
     @Override
     public void display() {
-        System.out.println("1. coffee :: 120 \n2. sandwich :: 150 \n3. Water :: 60 \n4. Ends");
+        System.out.println("+---+----------++-----+");
+        System.out.println("|Sno|   ITEM   ||Price|");
+        System.out.println("+---+----------++-----+");
+        System.out.println("| 1.|  coffee  :: 120 |\n| 2.| sandwich :: 150 |\n| 3.| Water    ::  60 |\n| 4.| Ends            |");
+        System.out.println("+---+----------++-----+");
     }
     @Override
     public void order() {
         int choice;
         int bill=0;
+        HashMap<String,Integer> order = new HashMap<String,Integer>();
+        HashMap<String,Integer> billMap = new HashMap<String,Integer>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the table number");
         tableNumber= scanner.nextInt();
@@ -82,6 +87,7 @@ public class CafeManagement implements BookTables, PlaceOrder {
             int quantity = scanner.nextInt();
             bill+=menuPrice.get(menu[choice-1])*quantity;
             order.put(menu[choice-1],quantity);
+            billMap.put(menu[choice-1],quantity*menuPrice.get(menu[choice-1]));
         }while(choice!=4);
         try {
             if (!order.containsKey("coffee")) {
@@ -92,17 +98,20 @@ public class CafeManagement implements BookTables, PlaceOrder {
             Random random = new Random();
             int billNumber = random.nextInt(1000) + 1;
             System.out.println("Bill no is :: "+billNumber);
-            HashMap<String,Integer> sortMenuPrice=sortMap(menuPrice);
-            System.out.println("  Items   unitprice  Qty  total");
+            HashMap<String,Integer> sortMenuPrice=sortMap(billMap);
+            System.out.println("+--------+-----------+-----+-------+");
+            System.out.println("|  Items | unitprice | Qty | total |");
+            System.out.println("+--------+-----------+-----+-------+");
             for(Map.Entry m : sortMenuPrice.entrySet()){
-                if(order.containsKey(m.getKey())){
+
                     int sum=order.get(m.getKey()).intValue()*(int)m.getValue();
-                    String result=String.format("%8s", m.getKey())+"    "+String.format("%4s",m.getValue())+"      "+order.get(m.getKey())+"    "+sum;
+                    String result=String.format("|%8s", m.getKey())+"|    "+String.format("%4s",menuPrice.get(m.getKey()))+"   |  "+order.get(m.getKey())+"  |  "+String.format("%4s",sum)+" |";
                     System.out.println(result);
                 }
-            }
-            System.out.println("------------------------------------\n--------------------------------------");
-            System.out.println("your total bill is "+bill);
+            System.out.println("+--------+-----------+-----+-------+");
+            System.out.println("------------------------------------");
+            System.out.println("| your total bill is "+bill+"           |");
+            System.out.println("------------------------------------");
         }
         catch (InvalidOrderException e){
             System.out.println("You must have to add 1 coffee");
