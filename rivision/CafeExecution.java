@@ -14,7 +14,9 @@ public class CafeExecution extends Thread {
             switch (choice){
                 case 0: flag=false;
                     break;
-                case 1: bookingStatus=persor1.booking();
+                case 1: sychronised(person1){
+                    bookingStatus=persor1.booking();
+                }
                     break;
                 case 2: try{
                     if(!bookingStatus){
